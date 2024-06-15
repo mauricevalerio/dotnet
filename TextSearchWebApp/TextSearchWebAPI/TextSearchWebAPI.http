@@ -1,0 +1,6 @@
+@TextSearchWebAPI_HostAddress = http://localhost:5217
+
+GET {{TextSearchWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

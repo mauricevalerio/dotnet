@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #caf0f8;
+  color: #03045e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  border-radius: 5px;
+  border: 1px solid #415a77;
+  padding: 1rem;
+}
+
+form div:first-child,
+form div:nth-child(2) {
+  width: 100%;
+  position: relative;
+}
+
+form div:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #03045e;
+  padding: .5rem;
+}
+
+input[type="text"] {
+  padding: .25rem;
+  flex: 2;
+  margin-left: .5rem;
+}
+
+input[type="checkbox"]+label,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+
+button:hover {
+  background: #03045e;
+  color: #fff;
+}
+
+.error-border {
+  border: 2px solid #D8000C;
+}
+
+.error-msg {
+  color: #D8000C;
+  font-size: .75rem;
+  position: absolute;
+  right: 0;
+}
+
+.error-msg-sentence {
+  top: .4rem;
+}
+
+.error-msg-text {
+  top: -1rem;
+}
