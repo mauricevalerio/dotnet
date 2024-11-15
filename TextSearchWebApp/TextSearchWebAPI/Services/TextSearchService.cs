@@ -1,31 +1,32 @@
 ﻿using System.Text.RegularExpressions;
+using TextSearchWebAPI.Model;
 
 namespace TextSearchWebAPI.Services
 {
     public class TextSearchService : ITextSearchService
     {
-        public int Search(string sentence, string text, bool isFullWordSearch, bool isCaseSensitive)
+        public int Search(TextSearch textSearch)
         {
 
             MatchCollection matches;
 
-            text = Regex.Escape(text);
+            textSearch.Text = Regex.Escape(textSearch.Text);
 
-            if (isFullWordSearch && isCaseSensitive)
+            if (textSearch.IsFullWordSearch && textSearch.IsCaseSensitive)
             {
-                matches = Regex.Matches(sentence, $@"(?<=^|\s){text}(?=\s|$)");
+                matches = Regex.Matches(textSearch.Sentence, $@"(?<=^|\s){textSearch.Text}(?=\s|$)");
             }
-            else if (isFullWordSearch)
+            else if (textSearch.IsFullWordSearch)
             {
-                matches = Regex.Matches(sentence, $@"(?<=^|\s){text}(?=\s|$)", RegexOptions.IgnoreCase);
+                matches = Regex.Matches(textSearch.Sentence, $@"(?<=^|\s){textSearch.Text}(?=\s|$)", RegexOptions.IgnoreCase);
             }
-            else if (isCaseSensitive)
+            else if (textSearch.IsCaseSensitive)
             {
-                matches = Regex.Matches(sentence, text);
+                matches = Regex.Matches(textSearch.Sentence, textSearch.Text);
             }
             else
             {
-                matches = Regex.Matches(sentence, text, RegexOptions.IgnoreCase);
+                matches = Regex.Matches(textSearch.Sentence, textSearch.Text, RegexOptions.IgnoreCase);
             }
 
             return matches.Count;

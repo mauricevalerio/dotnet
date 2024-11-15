@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using TextSearchWebAPI.Services;
+using TextSearchWebAPI.Model;
 
 namespace TextSearchWebAPI.Controllers
 {
@@ -15,14 +16,14 @@ namespace TextSearchWebAPI.Controllers
             _textSearchService = textSearchService;
         }
 
-        [HttpGet]
-        public ActionResult<int> Get(string sentence, string text, bool isFullWordSearch, bool isCaseSensitive)
+        [HttpPost]
+        public ActionResult<int> Post(TextSearch textSearch)
         {
-            if (String.IsNullOrEmpty(sentence) || String.IsNullOrEmpty(text))
+            if (String.IsNullOrEmpty(textSearch.Sentence) || String.IsNullOrEmpty(textSearch.Text))
             {
                 return BadRequest();
             }
-            return Ok(_textSearchService.Search(sentence, text, isFullWordSearch, isCaseSensitive));
+            return Ok(_textSearchService.Search(textSearch));
         }
     }
 }

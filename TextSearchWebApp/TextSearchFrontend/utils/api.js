@@ -1,8 +1,13 @@
-const URI = "https://localhost:7148/api/textsearch?";
+const URI = "https://localhost:7148/api/textsearch";
 
 export async function textSearchApi(textSearchObject) {
-
-    const resp = await fetch(`${URI}${objectToSearchParams(textSearchObject)}`);
+    const resp = await fetch(`${URI}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(textSearchObject)
+    });
     const data = await resp.json();
 
     if (!resp.ok) {
@@ -10,8 +15,4 @@ export async function textSearchApi(textSearchObject) {
         return errors;
     }
     return data;
-}
-
-function objectToSearchParams(textSearchObject) {
-    return new URLSearchParams([...Object.entries(textSearchObject)]).toString();
 }

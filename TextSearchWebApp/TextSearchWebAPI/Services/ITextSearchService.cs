@@ -1,7 +1,9 @@
-﻿namespace TextSearchWebAPI.Services
+﻿using TextSearchWebAPI.Model;
+
+namespace TextSearchWebAPI.Services
 {
     public interface ITextSearchService
     {
-        public int Search(string sentence, string text, bool isFullWordSearch, bool isCaseSensitive);
+        public int Search(TextSearch textSearch);
     }
 }

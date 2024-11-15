@@ -5,8 +5,7 @@ This was a problem provided to me back in 2022 for a entry level .NET developer 
 Went back and finished it this 2024 since I'm currently refreshing my knowledge with C# and .NET and found that it was an easy project 😞. Anyway glad that I came back to it and finished the project using Vue and not Angular which was the requirement. 😂
 
 ## Software Requirements
-- [Visual Studio](https://visualstudio.microsoft.com/vs/) or [VS Code](https://code.visualstudio.com/)
-- [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+- [Visual Studio](https://visualstudio.microsoft.com/vs/)
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download) includes .NET Core CLI
 - [VS Code](https://code.visualstudio.com/) or any code editors for front-end code
 - [Node.js](https://nodejs.org/en) for node package dependencies for front-end code
