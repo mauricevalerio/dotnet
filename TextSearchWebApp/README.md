@@ -1,8 +1,8 @@
 # Text Search Vue + ASP.NET Core Web API
 
-This was a problem provided to me back in 2022 for a entry level .NET developer role and unfortunately was not able to get it done that time since my knowledge with C# and .NET was outdated.
+Problem statement for an entry level .NET developer job opening. 
 
-Went back and finished it this 2024 since I'm currently refreshing my knowledge with C# and .NET and found that it was an easy project 😞. Anyway glad that I came back to it and finished the project using Vue and not Angular which was the requirement. 😂
+NOTE: I did use Vue instead of Angular.
 
 ## Software Requirements
 - [Visual Studio](https://visualstudio.microsoft.com/vs/)
@@ -21,7 +21,6 @@ Went back and finished it this 2024 since I'm currently refreshing my knowledge 
 ### Vue Front-End
 - Install node package dependencies `npm install`
 - Under `utils/api.js`, change line 1 to reflect where you serve your web API on your localhost server.
-- NOTE: Don't forget to append at the end the `?`
 
 
 ## Problem Description
